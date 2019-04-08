@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script src="js/freegate.js"></script>
+    <script>
+        ajax({
+            method: 'get',
+            url: 'https://jsonplaceholder.typicode.com/posts',
+            success: function(data) {
+                JSON.parse(data).forEach(element => {
+                    fg('body').prepend(`<p>${element.title}<p>`)
+                });
+            }
+        })
+    </script>
+</body>
+</html>
